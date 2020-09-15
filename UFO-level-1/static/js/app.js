@@ -20,9 +20,8 @@ tableData.forEach((ufoSighting) => {
 // Select the button using its id
 var button = d3.select("#filter-btn");
 
-// Select the form usig its id
-// QUESTION: is this the corect id???
-var form = d3.select("#form-group");
+// Select the form usig its element
+var form = d3.select("form");
 
 // Create event handlers for both clicking the button or hitting enter on the keyboard
 button.on("click", runEnter);
