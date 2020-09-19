@@ -1,9 +1,6 @@
 // from data.js
 var tableData = data;
 
-// Select the form usig its element
-var form = d3.select("form");
-
 // Display Main Table
 function runEnter(data) {
   // select the tbody element from idex.html
