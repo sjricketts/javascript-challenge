@@ -4,16 +4,13 @@ var tableData = data;
 // Select the form usig its element
 var form = d3.select("form");
 
-// Event handler function to sort by date
+// Display Main Table
 function runEnter(data) {
   // select the tbody element from idex.html
   var tbody = d3.select("tbody");
 
   // Clear the table
   tbody.html("");
-
-  // Prevent the page from refreshing
-  // d3.event.preventDefault();
 
   // Full table data
   data.forEach((ufoSighting) => {
@@ -26,6 +23,7 @@ function runEnter(data) {
 }
 runEnter(tableData);
 
+// Function to set up filters
 var filters = {};
 function updateFilter() {
   var changedElement = d3.select(this).select("input");
@@ -40,6 +38,7 @@ function updateFilter() {
   filterTable();
 }
 
+// Run filters based on input and dispaly filtered table
 function filterTable() {
   var filteredData = tableData;
   Object.entries(filters).forEach(([key, value]) => {
@@ -47,8 +46,10 @@ function filterTable() {
   });
   runEnter(filteredData);
 }
-// Event Listener for Filter
+// Event Listener for Filters
 d3.selectAll(".filter").on("change", updateFilter);
+
+// RESET BUTTON
 
 // Select the button using its id
 var button = d3.select("#filter-btn");
