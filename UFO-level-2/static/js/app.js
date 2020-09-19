@@ -53,5 +53,11 @@ d3.selectAll(".filter").on("change", updateFilter);
 // Select the button using its id
 var button = d3.select("#filter-btn");
 
+// select the tbody element from idex.html
+var tbody2 = d3.select("tbody");
+
 // Event handler for Reset button
-button.on("click", runEnter(data));
+button.on("click", function() {
+  tbody2.html("");
+  runEnter(tableData);
+});
